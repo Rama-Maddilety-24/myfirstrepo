@@ -1,0 +1,80 @@
+'''
+print("1________________palindrom using for loop_________")
+
+number=input("Enter any number :")
+i=0
+for i in range(len(number)):
+    if number[i]!=number[-1-i]:
+        print('It is not a palindrome')
+        break
+    else:
+        print('It is a palindrome')
+        break
+'''
+
+'''
+print("3________________reverse a string considering only alphabets__________")
+
+
+def reverseString(text):
+    index = -1
+    for i in range(len(text) - 1, int(len(text) / 2), -1):
+        if text[i].isalpha():
+            temp = text[i]
+            while True:
+                index += 1
+                if text[index].isalpha():
+                    text[i] = text[index]
+                    text[index] = temp
+                    break
+    return text
+
+string = "ab@#cd!ef"
+print("Input string: ", string)
+string = reverseString(list(string))
+print("Output string: ", "".join(string))
+
+'''
+
+'''
+print("7________________Flatten list______________")
+
+
+def flatten_list(n_list):
+    result_list = []
+    if not n_list: return result_list
+    stack = [list(n_list)]
+    while stack:
+        c_num = stack.pop()
+        next = c_num.pop()
+        if c_num: stack.append(c_num)
+        if isinstance(next, list):
+            if next: stack.append(list(next))
+        else: result_list.append(next)
+    result_list.reverse()
+    return result_list
+n_list = [1,2,[3,4,[5,6]],7,8,[9,[10]]]
+print("Original list:")
+print(n_list)
+print("\nFlatten list:")
+print(flatten_list(n_list))
+'''
+
+'''
+print("6_____________remove leading zeros from ip addres____________")
+import re
+ip = "216.08.094.196"
+string = re.sub('\.[0]*', '.', ip)
+print(string)
+
+'''
+'''
+print("4______________-count repeated values in dic format___________")
+MyList = ["a", "b", "c", "d", "n", "a", "b", 'n','m','n']
+res = {}
+
+for i in MyList:
+    res[i] = MyList.count(i)
+
+print(res)
+'''
